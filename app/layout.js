@@ -10,7 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    // data-theme is pulled from daisyui themes and typed into "tailwind.config.js"
+    <html lang="en" data-theme="light">
       <body className={inter.className}>{children}</body>
     </html>
   );
