@@ -4,14 +4,13 @@ export default function Home() {
   const isLoggedIn = true;
   const name = "Ulysses";
 
-  const age = 19;
-  let canVote;
+  const greeting1 = "Hello " + name;
+  console.log(greeting1);
+  // OUTPUT 1: "Hello Ulysses"
 
-  canVote = age >= 18 ? "Yes" : "No";
-  // condition ? expressionIfTure : expressionIfFalse
-
-  console.log(canVote);
-  // OUTPUT: "Yes"
+  const greeting2 = `Hello ${isLoggedIn ? name : "there"}`;
+  console.log(greeting2);
+  // OUTPUT 2: "Hello Ulysses"
 
   return (
     <main>
