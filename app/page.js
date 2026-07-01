@@ -10,7 +10,7 @@ export default function Home() {
 
   const greeting2 = `Hello ${isLoggedIn ? name : "there"}`;
   console.log(greeting2);
-  // OUTPUT 2: "Hello Ulysses"
+  // OUTPUT 2: "Hello Ulysses" if logged in or "Hello there" if not logged in
 
   return (
     <main>
