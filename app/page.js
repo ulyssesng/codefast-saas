@@ -12,8 +12,12 @@ export default function Home() {
         <div className="max-w-3xl mx-auto flex justify-between items-center px-8 py-2">
           <div className="font-bold">CodeFastSaas</div>
           <div className="space-x-4 max-md:hidden">
-            <a className="link link-hover">Pricing</a>
-            <a className="link link-hover">FAQ</a>
+            <a className="link link-hover" href="#pricing">
+              Pricing
+            </a>
+            <a className="link link-hover" href="#faq">
+              FAQ
+            </a>
           </div>
           <div>
             <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
@@ -33,7 +37,7 @@ export default function Home() {
       </section>
 
       {/* PRICING */}
-      <section className="bg-base-200">
+      <section className="bg-base-200" id="pricing">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             Pricing
@@ -86,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-base-200">
+      <section className="bg-base-200" id="faq">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             FAQ
