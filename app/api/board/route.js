@@ -29,10 +29,10 @@ export async function POST(req) {
       name: body.name,
     });
 
-    user.board.push(board._id);
+    user.boards.push(board._id);
     await user.save();
 
-    return NextResponse.json({});
+    return NextResponse.json(board);
   } catch (e) {
     return NextResponse.json(
       { error: e.message || "something went wrong" },
