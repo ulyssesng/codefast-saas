@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import "./Board";
 
 const userSchema = new mongoose.Schema({
   name: {

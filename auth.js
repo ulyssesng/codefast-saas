@@ -11,6 +11,14 @@ const config = {
     }),
   ],
   adapter: MongoDBAdapter(clientPromise),
+  callbacks: {
+    session: async ({ session, user }) => {
+      if (session?.user) {
+        session.user.id = user.id;
+      }
+      return session;
+    },
+  },
 };
 
 export const { handlers, signIn, signOut, auth } = NextAuth(config);
