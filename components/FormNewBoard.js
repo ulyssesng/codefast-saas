@@ -29,7 +29,7 @@ const FormNewBoard = () => {
       // 2. Redirect to dedicated board page
     } catch (error) {
       const errorMessage =
-        error.response.data.error || error.message || "Something went wrong";
+        error.response?.data?.error || error.message || "Something went wrong";
 
       toast.error(errorMessage);
     } finally {
