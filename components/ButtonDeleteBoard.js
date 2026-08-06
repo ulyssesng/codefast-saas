@@ -2,14 +2,24 @@
 
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
-const ButtonDeleteBoard = () => {
+const ButtonDeleteBoard = ({ boardId }) => {
+  const router = useRouter();
+
   const handleDeleteBoard = async () => {
     try {
       const isUserSure = window.confirm(
         "Are you sure you want to delete this board?",
       );
-      console.log(isUserSure);
+
+      if (isUserSure) {
+        await axios.delete(`/api/board?boardId=${boardId}`);
+
+        toast.success("Board deleted!");
+
+        router.push("/dashboard");
+      }
     } catch (error) {
       const errorMessage =
         error.response?.data?.error || error.message || "Something went wrong";
