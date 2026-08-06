@@ -18,7 +18,7 @@ const FormNewBoard = () => {
     setIsLoading(true);
 
     try {
-      const data = await axios.post("/api/board", { name });
+      await axios.post("/api/board", { name });
 
       setName("");
 
