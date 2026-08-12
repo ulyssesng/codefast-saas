@@ -17,7 +17,16 @@ const userSchema = new mongoose.Schema({
 
   hasAccess: {
     type: Boolean,
+    default: false,
   },
+  // set to false by default and will be true after payment
+
+  customerId: {
+    type: String,
+  },
+  // unique identifier given by payment provider
+
+  // planId would be used if multiple subscription plans are offered
 
   boards: [
     {
