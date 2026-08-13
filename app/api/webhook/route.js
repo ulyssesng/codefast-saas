@@ -31,6 +31,18 @@ export async function POST(req) {
       user.customerId = data.object.customer;
 
       await user.save();
+    } else if (type === "customer.subscription.deleted") {
+      // Revoke access to the product (subscription cancelled or non-payment)
+
+      await connectMongo();
+
+      const user = await User.findOne({
+        customerId: data.object.customer,
+      });
+
+      user.hasAccess = false;
+
+      await user.save();
     }
   } catch (e) {
     console.error("Stripe error: " + e?.message);
